@@ -8,7 +8,7 @@ import TableRow from "@mui/material/TableRow";
 
 const rowStyle = {
     '&:last-child td, &:last-child th': { border: 0 },
-    "& td" : { color : "white" }
+    "& td" : { color : "#d2d2d2" }
 }
 
 export default function ResponseHeader({ panelValue }) {
@@ -35,5 +35,5 @@ export default function ResponseHeader({ panelValue }) {
         <TableBody>{headers}</TableBody>
       </Table>
     </TableContainer>
-  );
+    )
 }

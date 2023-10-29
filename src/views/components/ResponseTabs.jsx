@@ -42,7 +42,7 @@ export default function ResponseTabs({ resBody, resHeader }) {
 
         {tabs.map((tab) => (
           <TabPanel key={tab.id}>
-            <tab.panel panelValue={tab.value} />
+            <tab.panel panelValue={tab.value} editable={false} />
           </TabPanel>
         ))}
       </Tabs>

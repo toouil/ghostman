@@ -5,6 +5,7 @@ html {
 }
 
 body {
+  /* background: #d2d2d2; */
   background: #232324;
 }
 
@@ -25,3 +26,9 @@ body {
     rotate: 360deg;
   }
 }
+
+.informational { color: rgb(81, 81, 212); }
+.success { color: rgb(81, 193, 81); }
+.redirection { color: rgb(215, 162, 61); }
+.client-error { color: rgb(203, 68, 68); }
+.server-error { color: rgb(172, 78, 172); }
