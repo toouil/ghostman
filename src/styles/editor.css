@@ -1,0 +1,9 @@
+.cm-activeLine,
+.cm-activeLineGutter {
+  background-color: #1f2228c6 !important;
+}
+
+.cm-gutters {
+  background-color: #2b2b2b !important;
+  border: none !important;
+}

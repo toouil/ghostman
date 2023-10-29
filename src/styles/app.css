@@ -1,0 +1,27 @@
+html {
+  --shadow: rgba(0, 0, 0, 0.2);
+  --surface-background: #222;
+  --primary-text: #f2f3f4;
+}
+
+body {
+  background: #232324;
+}
+
+.background_square {
+  background-image: url(/imgs/square.svg);
+  background-size: calc(20px + .7vw);
+  background-repeat: repeat;
+  -webkit-mask-image: linear-gradient(to top, white , transparent);
+  mask-image: linear-gradient(to top, white , transparent);
+}
+
+#loader {
+  animation: loader 1s infinite ease-in-out;
+}
+
+@keyframes loader {
+  100% {
+    rotate: 360deg;
+  }
+}
