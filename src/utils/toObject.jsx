@@ -4,3 +4,9 @@ export default function toObject (obj) {
     return result;
   }, {});
 };
+
+export function reverseToKeyValue (obj) {
+  return Object.entries(obj).map(([ key, value ]) => {
+    return { key, value }
+  })
+};

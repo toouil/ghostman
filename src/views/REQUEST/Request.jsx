@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import RequestTabs from "../components/RequestTabs";
-import toObject from "../../utils/toObject";
+import toObject, { reverseToKeyValue } from "../../utils/toObject";
 import UrlInput from "../components/UrlInput";
 import axios from "axios";
+import { saveToHistory } from "../../utils/localStorage";
 
 const initialKeyValueState = () => [
   {
@@ -12,28 +13,32 @@ const initialKeyValueState = () => [
     value: "",
   },
 ];
-const initialJsonEditorState = "{\n\t\n}"
+
 const initialURLState = "https://jsonplaceholder.typicode.com/posts/1"
 
-export default function Request({ setResponse, sendingState }) {
+const detectType = (data) => {
+  if (typeof data == "object") {
+    return JSON.stringify(data, null, 2)
+  }
+  return data
+}
+
+const validBody = (data) => {
+  const DataLen = Object.entries(data).length > 0;
+  
+  if (DataLen) return JSON.stringify(data, null, 2)
+  return "{\n\t\n}"
+}
+
+export default function Request({ setResponse, sendingState, setHistory, initialRequest }) {
   const [sending, setSending] = sendingState;
   const [URL, setURL] = useState(initialURLState);
   const [method, setMethod] = useState("GET");
   const [queryParams, setQueryParams] = useState(initialKeyValueState);
   const [headers, setHeaders] = useState(initialKeyValueState);
-  const [body, setBody] = useState(initialJsonEditorState);
 
-  // useEffect(() => {
-    // const testData = {
-    //   url: URL,
-    //   method,
-    //   queryParams: toObject(queryParams),
-    //   headers: toObject(headers),
-    //   body: data,
-    // };
-
-    // console.log(testData);
-  // }, [sending]);
+  const [initialBody, setInitialBody] = useState("{\n\t\n}");
+  const [body, setBody] = useState(initialBody);
 
   const onSendRequest = async (e) => {
     e.preventDefault();
@@ -47,25 +52,50 @@ export default function Request({ setResponse, sendingState }) {
       return alert("Something wrong with json data !")
     }
     
+    let time = new Date().getTime()
     try {
-      const response = await axios({
-        url: URL,
+      const request = {
+        url: URL.trim(),
         method,
         headers: toObject(headers),
         params: toObject(queryParams),
-        data
-      });
+        data,
+        id : uuidv4()
+      };
+
+      const response = await axios(request);
 
       setResponse({
         ...response,
-        data : JSON.stringify(response?.data, null, 2)
+        data : detectType(response?.data)
       });
+
+      saveToHistory(request, setHistory)
     } catch (err) {
-      setResponse({ status : 404, time : 99, size : 99, data : "{\n\t\"message\" : \"Error\"\n}" });
+      time = new Date().getTime() - time
+      setResponse({ status : 404, customData : {time}, data : "" });
+      console.log(err)
     } finally {
       setSending(false);
     }
   };
+
+  useEffect(() => {
+    if (initialRequest) {
+      try {
+        setURL(initialRequest.url)
+        setMethod(initialRequest.method)
+        setQueryParams(reverseToKeyValue(initialRequest.params))
+        setHeaders(reverseToKeyValue(initialRequest.headers))
+        setInitialBody(validBody(initialRequest.data))
+        setBody(validBody(initialRequest.data))
+
+        alert('Switched to :\n' + initialRequest.url + "\nwith " + initialRequest.method + " method")
+      } catch (err) {
+        alert('Something wrong .. please try later !!')
+      } 
+    }
+  }, [ initialRequest ])
 
   return (
     <>
@@ -80,7 +110,7 @@ export default function Request({ setResponse, sendingState }) {
         setQueryParams={setQueryParams}
         headers={headers}
         setHeaders={setHeaders}
-        body={initialJsonEditorState}
+        body={initialBody}
         setBody={setBody}
       />
     </>

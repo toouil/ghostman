@@ -1,43 +1,43 @@
 export const httpStatusColors = {
-  100: "informational", // Continue
-  101: "informational", // Switching Protocols
-  200: "success", // OK
-  201: "success", // Created
-  202: "success", // Accepted
-  203: "success", // Non-Authoritative Information
-  204: "success", // No Content
-  205: "success", // Reset Content
-  206: "success", // Partial Content
-  300: "redirection", // Multiple Choices
-  301: "redirection", // Moved Permanently
-  302: "redirection", // Found
-  303: "redirection", // See Other
-  304: "redirection", // Not Modified
-  305: "redirection", // Use Proxy
-  307: "redirection", // Temporary Redirect
-  400: "client-error", // Bad Request
-  401: "client-error", // Unauthorized
-  402: "client-error", // Payment Required
-  403: "client-error", // Forbidden
-  404: "client-error", // Not Found
-  405: "client-error", // Method Not Allowed
-  406: "client-error", // Not Acceptable
-  407: "client-error", // Proxy Authentication Required
-  408: "client-error", // Request Timeout
-  409: "client-error", // Conflict
-  410: "client-error", // Gone
-  411: "client-error", // Length Required
-  412: "client-error", // Precondition Failed
-  413: "client-error", // Request Entity Too Large
-  414: "client-error", // Request-URI Too Long
-  415: "client-error", // Unsupported Media Type
-  416: "client-error", // Requested Range Not Satisfiable
-  417: "client-error", // Expectation Failed
-  500: "server-error", // Internal Server Error
-  501: "server-error", // Not Implemented
-  502: "server-error", // Bad Gateway
-  503: "server-error", // Service Unavailable
-  504: "server-error", // Gateway Timeout
-  505: "server-error", // HTTP Version Not Supported
-  0 : "server-error"
+  100: "#5151d4", // Continue
+  101: "#5151d4", // Switching Protocols
+  200: "#51c151", // OK
+  201: "#51c151", // Created
+  202: "#51c151", // Accepted
+  203: "#51c151", // Non-Authoritative Information
+  204: "#51c151", // No Content
+  205: "#51c151", // Reset Content
+  206: "#51c151", // Partial Content
+  300: "#d7a23d", // Multiple Choices
+  301: "#d7a23d", // Moved Permanently
+  302: "#d7a23d", // Found
+  303: "#d7a23d", // See Other
+  304: "#d7a23d", // Not Modified
+  305: "#d7a23d", // Use Proxy
+  307: "#d7a23d", // Temporary Redirect
+  400: "#cb4444", // Bad Request
+  401: "#cb4444", // Unauthorized
+  402: "#cb4444", // Payment Required
+  403: "#cb4444", // Forbidden
+  404: "#cb4444", // Not Found
+  405: "#cb4444", // Method Not Allowed
+  406: "#cb4444", // Not Acceptable
+  407: "#cb4444", // Proxy Authentication Required
+  408: "#cb4444", // Request Timeout
+  409: "#cb4444", // Conflict
+  410: "#cb4444", // Gone
+  411: "#cb4444", // Length Required
+  412: "#cb4444", // Precondition Failed
+  413: "#cb4444", // Request Entity Too Large
+  414: "#cb4444", // Request-URI Too Long
+  415: "#cb4444", // Unsupported Media Type
+  416: "#cb4444", // Requested Range Not Satisfiable
+  417: "#cb4444", // Expectation Failed
+  500: "#ac4eac", // Internal Server Error
+  501: "#ac4eac", // Not Implemented
+  502: "#ac4eac", // Bad Gateway
+  503: "#ac4eac", // Service Unavailable
+  504: "#ac4eac", // Gateway Timeout
+  505: "#ac4eac", // HTTP Version Not Supported
+  0 : "#ac4eac"
 };

@@ -29,7 +29,7 @@ export default function Response({ response }) {
       <div className="flex justify-between items-center gap-3 flex-wrap py-2.5 px-2">
         <h1 className="text-xl font-normal">Response</h1>
         <div className="flex items-center justify-between gap-1 text-sm">
-          <span className={"pl-3 pr-1.5 " + httpStatusColors[status()]}>Status : { status() }</span>
+          <span className="pl-3 pr-1.5" style={{ color : httpStatusColors[status()] }}>Status : { status() }</span>
           <span className="pl-3 pr-1.5 border-l border-white/20">Time : { time() } ms</span>
           <span className="pl-3 pr-1.5 border-l border-white/20">Size : { size() }</span>
         </div>
