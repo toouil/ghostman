@@ -4,7 +4,7 @@ import cn from "../../utils/cn";
 import Button from "./Button";
 import clsx from "clsx";
 
-export default function SelectMenu({ optionState, options }) {
+export default function SelectMenu({ optionState, options, className }) {
     const [ option, setOption ] = optionState
     const [hideDropMenu, setHideDropMenu] = useState(true);
 
@@ -23,7 +23,7 @@ export default function SelectMenu({ optionState, options }) {
     }, []);
 
   return (
-    <div className="relative w-28 z-20">
+    <div className={cn("relative w-28 z-20", className)}>
       <span className="relative">
         <div className="absolute opacity-0 top-0 left-0 w-full h-full cursor-pointer"></div>
         <Button

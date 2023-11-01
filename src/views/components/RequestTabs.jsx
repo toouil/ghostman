@@ -43,7 +43,7 @@ export default function RequestTabs({
         forceRenderTabPanel
         selectedTabClassName="bg-blue-500"
       >
-        <TabList className="relative text-white rounded-lg border border-white/5 bg-white/5 font-medium text-md p-1.5 flex gap-3 tabs">
+        <TabList className="relative text-white rounded-lg border border-white/5 bg-white/5 font-medium text-md p-1.5 flex gap-3 flex-wrap tabs">
           {tabs.map((tab) => (
             <Tab
               key={tab.id}

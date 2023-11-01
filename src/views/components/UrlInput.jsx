@@ -12,8 +12,8 @@ export default function UrlInput({ sending, urlState, methodState, onSendRequest
   return (
     <div className="pt-[5vh] pb-[2vh]">
       <form onSubmit={(e) => onSendRequest(e)} className="flex gap-1 w-full flex-wrap">
-        <div className="flex gap-1 flex-grow min-w-[400px] w-[70%]">
           <SelectMenu
+          className="sc_361:flex-grow"
             options={methods}
             optionState={[method, setMethod]}
           />
@@ -26,9 +26,8 @@ export default function UrlInput({ sending, urlState, methodState, onSendRequest
             className="text-gray-200 rounded-lg border border-white/5 bg-white/5 hover:bg-gray-100/10 focus:ring-1 focus:outline-none focus:ring-blue-300 font-medium text-sm px-5 py-2.5 flex-grow"
             placeholder="https://example.com"
           />
-        </div>
         <Button
-          className="min-w-[100px] flex-grow"
+          className="mobile:flex-grow"
           type="submit"
         >
           Send {sending ? <ICON.Loader /> : <ICON.Send />}
