@@ -23,8 +23,11 @@ export default function KeyValuesInput({ row, updateRow, removeRow }) {
           onChange={({ target }) => updateRow(row, target)}
         />
         <Button
-          className="border border-red-500/50 bg-red-800/20 hover:bg-red-800/50 py-2 ml-1"
+          type="button"
+          className="ml-1"
           onClick={() => removeRow(row)}
+          theme="warning"
+          size="sm"
         >
           <ICON.Delete />
         </Button>

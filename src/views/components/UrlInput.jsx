@@ -13,7 +13,7 @@ export default function UrlInput({ sending, urlState, methodState, onSendRequest
     <div className="pt-[5vh] pb-[2vh]">
       <form onSubmit={(e) => onSendRequest(e)} className="flex gap-1 w-full flex-wrap">
           <SelectMenu
-          className="sc_361:flex-grow"
+            className="sc_361:flex-grow"
             options={methods}
             optionState={[method, setMethod]}
           />

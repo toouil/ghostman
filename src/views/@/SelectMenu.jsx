@@ -28,8 +28,9 @@ export default function SelectMenu({ optionState, options, className }) {
         <div className="absolute opacity-0 top-0 left-0 w-full h-full cursor-pointer"></div>
         <Button
           onClick={() => setHideDropMenu(!hideDropMenu)}
-          className={"relative z-10 w-full border border-white/5 bg-white/5 hover:bg-gray-100/10 justify-between gap-0 " + clsx({ "pointer-events-none" : !hideDropMenu })}
+          className={"relative z-10 w-full justify-between gap-0 " + clsx({ "pointer-events-none" : !hideDropMenu })}
           type="button"
+          theme="glass"
         >
           {option} <ICON.DropDown />
         </Button>

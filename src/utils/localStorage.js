@@ -1,5 +1,15 @@
 export const saveToHistory = (requestObj, setState) => {
-    const srt_object = JSON.stringify(requestObj),
+    const ogj_date = new Date();
+    const [ day, month, year, hour, minute ] = [
+        ogj_date.getDate(),
+        ogj_date.getMonth(),
+        ogj_date.getFullYear(),
+        ogj_date.getHours(),
+        ogj_date.getMinutes()
+    ]
+    const date = `${day}/${month}/${year} - ${hour}:${minute}`
+
+    const srt_object = JSON.stringify({...requestObj, date}),
     localHistory = JSON.parse(localStorage.getItem('history') || "[]")
 
     const history = [...localHistory, srt_object];

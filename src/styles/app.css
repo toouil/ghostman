@@ -2,6 +2,11 @@ body {
   background: #232324;
 }
 
+.notify {
+  background: #232324;
+  color: #f3f4f6;
+}
+
 .background_square {
   background-image: url(/imgs/square.svg);
   background-size: calc(20px + .7vw);

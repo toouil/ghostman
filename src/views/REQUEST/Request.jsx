@@ -5,6 +5,7 @@ import toObject, { reverseToKeyValue } from "../../utils/toObject";
 import UrlInput from "../components/UrlInput";
 import axios from "axios";
 import { saveToHistory } from "../../utils/localStorage";
+import toast from "react-hot-toast";
 
 const initialKeyValueState = () => [
   {
@@ -90,9 +91,9 @@ export default function Request({ setResponse, sendingState, setHistory, initial
         setInitialBody(validBody(initialRequest.data))
         setBody(validBody(initialRequest.data))
 
-        alert('Switched to :\n' + initialRequest.url + "\nwith " + initialRequest.method + " method")
+        toast.success('done', { className : "notify" })
       } catch (err) {
-        alert('Something wrong .. please try later !!')
+        toast.error('Something wrong .. please try later !!', { className : "notify" })
       } 
     }
   }, [ initialRequest ])

@@ -50,8 +50,8 @@ export default function KeyValues({ panelValue, setPanelValue }) {
       ))}
 
       <Button
+        type="button"
         onClick={addNewRow}
-        className="px-8 py-2"
       >
         Add
       </Button>

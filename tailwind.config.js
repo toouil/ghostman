@@ -7,6 +7,7 @@ export default {
   theme: {
     extend: {
       screens: {
+        'sc_800': { 'raw': '(max-width: 800px)' },
         'mobile': { 'raw': '(max-width: 500px)' },
         'sc_361': { 'raw': '(max-width: 361px)' },
       }
